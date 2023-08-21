@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% block title %} {{title}} {% endblock %}
+{% block header_title %} {{subtitle}} {% endblock %}
+{% block content %}
+<div class="card mb-3">
+    <div class="row g-0">
+      <div class="col-md-4">
+        <img src="https://static.djangoproject.com/img/logos/django-logo-positive.svg" class="img-fluid rounded-start">
+      </div>
+      <div class="col-md-8">
+        <div class="card-body">
+          <h5 class="card-title">
+             {{client.name}}
+          </h5>
+              <p class="card-text">Id: {{client.id}}</p>         
+              <p class="card-text">Password: {{client.password}}</p>
+              <p class="card-text">Address: {{client.address}}</p>
+              <p class="card-text">Email: {{client.email}}</p>
+              <p class="card-text">Credit card info: {{client.credit_card_info}}</p>
+              <p class="card-text">User name: {{client.user_name}}</p>
+              
+              
+              <a class="btn bg-primary text-white" href="{% url 'delete_client' id=client.id %}">Delete</a>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}
